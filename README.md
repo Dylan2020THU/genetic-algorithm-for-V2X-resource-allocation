@@ -1,14 +1,16 @@
 # About
 In this work, the genetic algorithm is used to address the V2X resource allocation.
 # Pseudocode
+The framework: crossover and mutation happen in each loop.
+
 	  // start with an initial time
 	  t := 0;
 
-	  // initialize a usually random population of individuals
-	  initpopulation P (t);
+	  // initialization with a random population
+	  P (t);
 
-	  // evaluate fitness of all initial individuals of population
-	  evaluate P (t);
+	  // evaluate fitness of all initial individuals of a population
+	  evaluate Fitness (t);
 
 	  // test for termination criterion (time, fitness, etc.)
 	  while not done do
@@ -19,10 +21,10 @@ In this work, the genetic algorithm is used to address the V2X resource allocati
 	       // select a sub-population for offspring production
 	       P' := selectparents P (t);
 
-	       // recombine the "genes" of selected parents
-	       recombine P' (t);
+	       // crossover using the selected parents
+	       crossover P' (t);
 
-	       // perturb the mated population stochastically
+	       // mutation
 	       mutate P' (t);
 
 	       // evaluate it's new fitness
@@ -30,5 +32,3 @@ In this work, the genetic algorithm is used to address the V2X resource allocati
 
 	       // select the survivors from actual fitness
 	       P := survive P,P' (t);
-	  od
-     end GA.
