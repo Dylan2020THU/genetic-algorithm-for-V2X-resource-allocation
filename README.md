@@ -1,5 +1,5 @@
 # About
-In this work, the genetic algorithm is used to address the V2X resource allocation.
+In this work, the genetic algorithm is used to address the V2X resource allocation problem.
 # Pseudocode
 The framework: crossover and mutation happen in each loop.
 
